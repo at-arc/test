@@ -1,1 +1,188 @@
-Hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stratoray — Experimental Landing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===== LLM USER-AGENT REDIRECT ===== -->
+  <script>
+  (function () {
+    const targetHost = "tollbit.stratoray.net";
+
+    // Prevent redirect loop
+    if (window.location.hostname === targetHost) return;
+
+    const ua = navigator.userAgent || "";
+
+    const LLM_UA_REGEX = /(
+      ChatGPT-User|
+      PerplexityBot|
+      GPTBot|
+      anthropic-ai|
+      CCBot|
+      Claude-Web|
+      ClaudeBot|
+      cohere-ai|
+      YouBot|
+      Diffbot|
+      OAI-SearchBot|
+      meta-externalagent|
+      Timpibot|
+      Amazonbot|
+      Bytespider|
+      Perplexity-User
+    )/i;
+
+    if (LLM_UA_REGEX.test(ua)) {
+      const url = new URL(window.location.href);
+      url.hostname = targetHost;
+      window.location.replace(url.toString());
+    }
+  })();
+  </script>
+  <!-- ================================== -->
+
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #141823;
+      --accent: #6ae3ff;
+      --text: #e6e9f0;
+      --muted: #9aa3b2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a1f2e, var(--bg));
+      color: var(--text);
+    }
+
+    header {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    p.lead {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), #0f1320);
+      border-radius: 14px;
+      padding: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+    }
+
+    .card h3 {
+      margin: 0.25rem 0 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(106,227,255,0.12);
+      color: var(--accent);
+      font-size: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <span class="badge">Human-Optimized UI</span>
+    <h1>Stratoray</h1>
+    <p class="lead">
+      This page serves rich, visual content for humans.
+      Automated agents and LLM clients are redirected to a
+      <strong>text-only representation</strong> on the Tollbit subdomain.
+    </p>
+  </header>
+
+  <main>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" />
+      <h3>High-signal content</h3>
+      <p>
+        Designed for real users — imagery, layout, and structure that
+        would be meaningless to a crawler.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop" />
+      <h3>Selective access</h3>
+      <p>
+        LLM-identified traffic is routed elsewhere before meaningful
+        rendering occurs.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop" />
+      <h3>Clear separation</h3>
+      <p>
+        Visual UX for browsers here.
+        Plain text + attribution on <code>tollbit.stratoray.net</code>.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Stratoray · Human UI / Agent-aware routing
+  </footer>
+</body>
+</html>
