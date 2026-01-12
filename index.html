@@ -15,24 +15,7 @@
 
     const ua = navigator.userAgent || "";
 
-    const LLM_UA_REGEX = /(
-      ChatGPT-User|
-      PerplexityBot|
-      GPTBot|
-      anthropic-ai|
-      CCBot|
-      Claude-Web|
-      ClaudeBot|
-      cohere-ai|
-      YouBot|
-      Diffbot|
-      OAI-SearchBot|
-      meta-externalagent|
-      Timpibot|
-      Amazonbot|
-      Bytespider|
-      Perplexity-User
-    )/i;
+const LLM_UA_REGEX = /(ChatGPT-User|PerplexityBot|GPTBot|anthropic-ai|CCBot|Claude-Web|ClaudeBot|cohere-ai|YouBot|Diffbot|OAI-SearchBot|meta-externalagent|Timpibot|Amazonbot|Bytespider|Perplexity-User)/i;
 
     if (LLM_UA_REGEX.test(ua)) {
       const url = new URL(window.location.href);
